@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Hello {{ session['username'] }}</h2>
+    <p>name:{{session['username']}}</p>
+
+<a href="{{url_for('home')}}"> მთავარი გვერდი </a>
+<form method="post">
+<body >
+    <img style="width: 500px;height: 500px;margin-left: 500px" src="{{ img }}" alt="sus">
+    <input type="text" name="imglink" class="form-control mb-3 mt-3" placeholder="Image Link">
+    <button type="submit" class="btn btn-success mt-3">ავტორიზაცია</button>
+  </body>
+</form>
+
+{% endblock %}
+
+

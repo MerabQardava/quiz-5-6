@@ -1,0 +1,28 @@
+{%  extends 'base.html' %}
+ {% block title %} Home page {%  endblock %}
+
+{% block content %}
+{% with messages=get_flashed_messages() %}
+        {% for msg in messages%}
+        {%if msg=="error"%}
+            <p align="center"style="margin-top: 250px">სამწუხაროდ წიგნი არ იქნა ნაპოვნი, გადაამოწმეთ დასახელება ან აირჩიეთ სხვა.</p>
+        {%else%}
+            <p align="center" style="margin-top:250px ">წიგნის დასახელება : {{res3['results'][0]['book_title']}}</p>
+            <p align="center">გამოშვების თარიღი: {{res3['results'][0]['publication_dt']}}</p>
+            <p align="center">ავტორი: {{res3['results'][0]['book_author']}}</p>
+            <p align="center">მოკლე აღწერა: {{res3['results'][0]['summary']}}</p>
+            <a style="margin-left: 360px"  href="{{res3['results'][0]['url']}}" >სრული Review:{{res3['results'][0]['url']}}</a>
+        {%endif%}
+        {% endfor %}
+{% endwith %}
+
+
+<form  style="width: 60%;margin-left: 325px;margin-top: 250px" method="post">
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="წიგნის სახელი" name="bookname" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary"  type="submit" id="button-addon2">Button</button>
+  </div>
+</form>
+
+{% endblock %}

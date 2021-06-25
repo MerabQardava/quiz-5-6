@@ -1,0 +1,26 @@
+{%  extends 'base.html' %}
+ {% block title %} Home page {%  endblock %}
+
+{% block content %}
+<br>
+<h3 align="center">აირჩიეთ სასურველი ჟანრი</h3>
+
+
+
+{% for x in chungus %}
+
+   <form method="POST">
+     <button style="width: 60%;margin-left: 325px;margin-top: 5px" type="submit" name="{{x}}" class="btn btn-success mt-3" value="{{x}}">{{x}}</button>
+
+   </form>
+{% endfor%}
+
+<!--    <form method="get" style="width:50%; margin-left:20px;">-->
+<!--        <button type="submit" name="sus" class="btn btn-success mt-3" value="">ავტორიზაცია</button>-->
+<!--    </form>-->
+
+
+
+
+{% endblock %}
+

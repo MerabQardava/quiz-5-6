@@ -1,0 +1,13 @@
+{%  extends 'base.html' %}
+ {% block title %} Home page {%  endblock %}
+
+{% block content %}
+<h1 align="center">{{genrename}}</h1>
+
+  {% for x in range (0,bnum) %}
+
+  <h2 align="center">{{booklist[x]}}</h2>
+
+  {% endfor %}
+
+{% endblock %}
